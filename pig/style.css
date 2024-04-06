@@ -1,0 +1,121 @@
+:root {
+    --pink: #F7949A;
+    --pinkLight: #FFB7BC;
+    --pinkDark: #CE666D;
+    --background: #FFDCB5;
+}
+
+.wrapper {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: var(--background);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pig {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.head {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    background-color: var(--pink);
+    border-radius: 50%;
+}
+
+.ear {
+    position: absolute;
+    z-index: -1;
+    width: 60px;
+    height: 60px;
+    background-color: var(--pinkLight);
+    border: 9px solid var(--pink);
+    top: -5px;
+}
+
+.ear-l {
+    border-radius: 15px 0 0 0 ;
+    left: 10px;
+    transform: rotate(-12deg) skewY(27deg);
+}
+
+.ear-r {
+    border-radius: 0 15px 0 0 ;
+    right: 10px;
+    transform: rotate(12deg) skewY(-27deg);
+}
+
+.eye {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+    top: 36%;
+    animation: eyes 15s ease-in-out infinite;
+}
+
+.eye::before {
+    content: '';
+    height: 4px;
+    width: 4px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pupills 15s ease-in-out infinite
+}
+
+.eye-l {
+    left: 23%;
+}
+
+.eye-r {
+    right: 23%;
+}
+
+.nose {
+    position: absolute;
+    height: 50px;
+    width: 60px;
+    top: 55%;
+    left: 50px;
+    background-color: var(--pinkLight);
+    border-radius: 100px / 80px;
+}
+
+.in-nose {
+    background-color: var(--pinkDark);
+    border-radius: 50%;
+    height: 9px;
+    width: 9px;
+    position: absolute;
+    top: 40%;
+}
+
+.in-nose-l {
+    left: 14px;
+}
+
+.in-nose-r {
+    right: 14px;
+}
+
+@keyframes eyes {
+    0%, 23%, 25%, 65%, 67%, 89%, 91%, 100% {
+        transform: scaleY(1);
+    }
+    24%, 66%, 90% {
+        transform: scaleY(0);
+    }
+}
+
